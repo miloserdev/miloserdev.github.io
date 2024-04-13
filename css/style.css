@@ -1,0 +1,262 @@
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: grid;
+    background: var(--systemBackground);
+    font-family: sans;
+}
+
+header {
+    color: white;
+    display: grid;
+    grid-gap: 50px;
+    grid-auto-flow: column;
+    justify-content: space-around;
+    place-content: space-between;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    width: -webkit-fill-available;
+    /* backdrop-filter: blur(60px); */
+    z-index: 999;
+}
+
+header > * {
+    /* display: grid; */
+    /* place-self: center; */
+}
+
+header > links {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-around;
+    place-content: space-between;
+    grid-gap: 50px;
+    height: 100%;
+    place-content: center;
+    padding: 0 20px;
+    backdrop-filter: blur(60px);
+    border: 2px solid var(--label);
+}
+
+header > links:hover
+{
+    border: 2px solid var(--link);
+}
+
+header > links > a {
+    color: var(--label);
+}
+
+header > links > a:hover {
+    color: var(--link);
+}
+
+img[icon] {
+    width: 50px;
+    height: 50px;
+    /* top: 50px; */
+    /* left: 50px; */
+    display: grid;
+    filter: invert( var(--invert) )
+}
+
+img[icon]:hover {
+    filter: invert( var(--invert) ) drop-shadow(0px 0px 24px #ffffff50);
+}
+
+container {
+    display: grid;
+    grid-gap: 20px;
+    padding: 50px;
+    overflow: hidden;
+    position: relative;
+    perspective: 3000px;
+}
+
+section[about]
+{
+    display: grid;
+    grid-auto-flow: column;
+    place-content: space-between;
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    bottom: 15px;
+    color: var(--label);
+}
+
+gallery {
+    display: grid;
+    grid-gap: 150px;
+    padding: 150px 0;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+    justify-content: center;
+}
+
+gallery > g_item {
+    display: grid;
+    position: relative;
+    scroll-snap-align: center;
+    color: var(--label);
+    place-content: center;
+}
+
+gallery > g_item > img
+{
+    fill: currentColor;
+}
+
+gallery > g_item {
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    /* grid-template-rows: repeat(5, 1fr); */
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    /* width: min-content; */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+gallery > g_item > g_img,
+gallery > g_item > img {
+    grid-area: 1 / 1 / 6 / 3;
+    display: grid;
+    place-self: center;
+    fill: currentColor;
+    width: 100%;
+    color: var(--secondaryLabel);
+}
+
+gallery > g_item > g_header {
+    display: grid;
+    grid-auto-flow: column;
+    place-content: space-between;
+    grid-area: 1 / 1 /6 / 3;
+    z-index: 9;
+    /* width: fit-content; */
+    height: fit-content;
+    /* background: var(--secondarySystemFill); */
+    backdrop-filter: blur(10px);
+}
+
+gallery > g_item > g_header > g_icon
+{
+    display: grid;
+    grid-gap: 5px;
+    grid-auto-flow: column;
+    grid-area: 1 / 2;
+    place-self: end;
+    place-items: center;
+    z-index: 9;
+    width: fit-content;
+    height: fit-content;
+    color: #e3b341;
+}
+
+gallery > g_item > g_header > g_icon > *
+{
+    fill: currentColor;
+}
+
+gallery > g_item > marquee[g_marquee] {
+    grid-area: 5 / 1 / 6 / 3;
+    /* width: fit-content; */
+    height: fit-content;
+    /* background: var(--secondarySystemFill); */
+    backdrop-filter: blur(10px);
+}
+
+gallery > g_item:hover {
+    /* filter: drop-shadow(20px 20px 60px #ffffff30); */
+}
+
+gallery > g_item::_after {
+    content: "";
+    display: grid;
+    place-content: center;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    transition: all 0.3s cubic-bezier(0, 0.59, 0.48, 1.39)
+}
+
+gallery > g_item:hover::_after {
+    content: "🮐";
+    width: 60px;
+    height: 60px;
+}
+
+* {
+    transition: all 0.3s cubic-bezier(0, 0.7, 0.68, 0.28);
+}
+
+area[noise] {
+    display: grid;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    background-image: url(../img/noise.gif);
+    background-size: contain;
+    user-select: none;
+    pointer-events: none;
+    z-index: 999;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+    z-index: 999;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #dddddd;
+    background: var(--label);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--systemGray5);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--systemGray3);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate3d(0.3, 1, 0.3, 0deg);
+    }
+
+    100% {
+        transform: rotate3d(0.3, 1, 0.3, 360deg);
+    }
+}
+
+
+a
+{
+    display: grid;
+    grid-auto-flow: column;
+    /* place-content: center; */
+    /* justify-content: center; */
+    place-items: center;
+    grid-gap: 5px;
+}
+
+svg
+{
+    fill: currentColor;
+}
