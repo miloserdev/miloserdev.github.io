@@ -20,6 +20,7 @@ header {
     top: 50px;
     left: 50px;
     right: 50px;
+    min-height: 50px;
     width: -webkit-fill-available;
     /* backdrop-filter: blur(60px); */
     z-index: 999;
@@ -36,7 +37,7 @@ header > links {
     justify-content: space-around;
     place-content: space-between;
     grid-gap: 50px;
-    height: 100%;
+    /* height: 100%; */
     place-content: center;
     padding: 0 20px;
     backdrop-filter: blur(60px);
@@ -259,4 +260,22 @@ a
 svg
 {
     fill: currentColor;
+}
+
+
+@media (max-width: 567px) {
+  header > img[icon]
+    {
+        display: none;
+    }
+
+    header
+    {
+        grid-gap: 0px;
+        /* left: unset; */
+        /* right: unset; */
+        place-content: unset;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
 }
