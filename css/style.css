@@ -116,7 +116,8 @@ gallery > g_item > img
     fill: currentColor;
 }
 
-gallery > g_item {
+gallery > a[g_item] {
+    appearance: none;
     display: grid;
     /* grid-template-columns: repeat(2, 1fr); */
     /* grid-template-rows: repeat(5, 1fr); */
@@ -125,10 +126,12 @@ gallery > g_item {
     /* width: min-content; */
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    color: var(--label);
+    text-decoration: none;
 }
 
-gallery > g_item > g_img,
-gallery > g_item > img {
+gallery > a[g_item] > g_img,
+gallery > a[g_item] > img {
     grid-area: 1 / 1 / 6 / 3;
     display: grid;
     place-self: center;
@@ -137,7 +140,7 @@ gallery > g_item > img {
     color: var(--secondaryLabel);
 }
 
-gallery > g_item > g_header {
+gallery > a[g_item] > g_header {
     display: grid;
     grid-auto-flow: column;
     place-content: space-between;
@@ -149,7 +152,7 @@ gallery > g_item > g_header {
     backdrop-filter: blur(10px);
 }
 
-gallery > g_item > g_header > g_icon
+gallery > a[g_item] > g_header > g_icon
 {
     display: grid;
     grid-gap: 5px;
@@ -163,12 +166,12 @@ gallery > g_item > g_header > g_icon
     color: #e3b341;
 }
 
-gallery > g_item > g_header > g_icon > *
+gallery > a[g_item] > g_header > g_icon > *
 {
     fill: currentColor;
 }
 
-gallery > g_item > marquee[g_marquee] {
+gallery > a[g_item] > marquee[g_marquee] {
     grid-area: 5 / 1 / 6 / 3;
     /* width: fit-content; */
     height: fit-content;
@@ -176,11 +179,11 @@ gallery > g_item > marquee[g_marquee] {
     backdrop-filter: blur(10px);
 }
 
-gallery > g_item:hover {
+gallery > a[g_item]:hover {
     /* filter: drop-shadow(20px 20px 60px #ffffff30); */
 }
 
-gallery > g_item::_after {
+gallery > a[g_item]::_after {
     content: "";
     display: grid;
     place-content: center;
@@ -193,7 +196,7 @@ gallery > g_item::_after {
     transition: all 0.3s cubic-bezier(0, 0.59, 0.48, 1.39)
 }
 
-gallery > g_item:hover::_after {
+gallery > a[g_item]:hover::_after {
     content: "🮐";
     width: 60px;
     height: 60px;
@@ -201,6 +204,7 @@ gallery > g_item:hover::_after {
 
 * {
     transition: all 0.3s cubic-bezier(0, 0.7, 0.68, 0.28);
+    box-sizing: border-box;
 }
 
 area[noise] {
@@ -251,12 +255,12 @@ area[noise] {
 
 a
 {
-    display: grid;
-    grid-auto-flow: column;
+    /* display: grid; */
+    /* grid-auto-flow: column; */
     /* place-content: center; */
     /* justify-content: center; */
-    place-items: center;
-    grid-gap: 5px;
+    /* place-items: center; */
+    /* grid-gap: 5px; */
 }
 
 svg

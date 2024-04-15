@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () =>
     let make_repos = () => repos.forEach(repo => {
 
         gallery.innerHTML += `
-        <g_item>
+        <a g_item href="${repo.html_url}">
             <g_header>
                 <g_title>${repo.name}</g_title>
                 <g_icon>${star}${repo.stargazers_count}</g_icon>
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () =>
             
             <g_img>${mg}</g_img>
             <marquee g_marquee>${repo.description}</marquee>
-        </g_item>
+        </a>
         `;
     });
 
