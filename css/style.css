@@ -1,6 +1,6 @@
 html, body {
-    width: 100vw;
-    height: 100vh;
+    width: 100svw;
+    height: 100svh;
     margin: 0;
     padding: 0;
     position: relative;
@@ -42,6 +42,7 @@ header > links {
     padding: 0 20px;
     backdrop-filter: blur(60px);
     border: 2px solid var(--label);
+    font-size: small;
 }
 
 header > links:hover
@@ -89,6 +90,7 @@ section[about]
     right: 50px;
     bottom: 15px;
     color: var(--label);
+    font-size: smaller;
 }
 
 gallery {
