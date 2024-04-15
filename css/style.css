@@ -103,15 +103,16 @@ gallery {
     justify-content: center;
 }
 
-gallery > g_item {
+gallery > a[g_item] {
     display: grid;
     position: relative;
     scroll-snap-align: center;
     color: var(--label);
+    text-decoration: none;
     place-content: center;
 }
 
-gallery > g_item > img
+gallery > a[g_item] > img
 {
     fill: currentColor;
 }
@@ -126,8 +127,6 @@ gallery > a[g_item] {
     /* width: min-content; */
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    color: var(--label);
-    text-decoration: none;
 }
 
 gallery > a[g_item] > g_img,
