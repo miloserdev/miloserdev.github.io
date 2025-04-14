@@ -283,4 +283,9 @@ svg
         overflow-x: auto;
         overflow-y: hidden;
     }
+
+    links
+    {
+        border: none;
+    }
 }
