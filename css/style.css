@@ -1,4 +1,4 @@
-html, body {
+html, body, container {
     width: 100svw;
     height: 100svh;
     margin: 0;
@@ -78,6 +78,7 @@ container {
     overflow: hidden;
     position: relative;
     perspective: 3000px;
+    overflow: hidden;
 }
 
 section[about]
@@ -282,10 +283,5 @@ svg
         place-content: unset;
         overflow-x: auto;
         overflow-y: hidden;
-    }
-
-    links
-    {
-        border: none;
     }
 }
