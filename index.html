@@ -12,9 +12,19 @@
 
 <body>
     <cover noise></cover>
-    <svg fill="#fff" viewBox="0 0 420 420" style="width: 50vw; max-width: 200px" style="place-self: center;">
-        <path d="M 370,250 250,370 130,250 V 370 L 40,460 V 40 L 250,250 460,40 v 420 l -90,-90 z"
-            transform="translate(-40,-40)" />
+    <svg width="420" height="420" viewBox="0 0 420 420">
+        <g transform="translate(-1360,-360)">
+            <path class="wing" id="wing0" d="M 1690,570 1570,690 V 570 l 210,-210 v 420 l -90,-90 z"></path>
+            <path class="piece" id="piece8" d="m 1430,480 35,60 -15,30 v 120 l -55,-165 z"></path>
+            <path class="piece" id="piece7" d="m 1490,490 80,80 h -120 z" ></path>
+            <path class="piece" id="piece6" d="m 1450,570 h 120 v 60 z m 72,25 z"></path>
+            <path class="piece" id="piece5" d="m 1450,570 120,60 v 60 z"></path>
+            <path class="piece" id="piece4" d="m 1360,360 130,130 -25,50 z"></path>
+            <path class="piece" id="piece3" d="m 1360,360 70,120 -70,90 z"></path>
+            <path class="piece" id="piece2" d="m 1395,525 55,165 -90,-120 z"></path>
+            <path class="piece" id="piece1" d="m 1360,570 60,80 -60,130 z"></path>
+            <path class="piece" id="piece0" d="m 1420,650 30,40 -90,90 z"></path>
+        </g>
     </svg>
 </body>
 
@@ -49,6 +59,71 @@
         user-select: none;
         pointer-events: none;
         z-index: 999;
+    }
+
+    svg {
+        fill: white;
+        transition: all ease-in-out 1s;
+        width: 200px;
+        max-width: 200px;
+    }
+    
+    svg .piece:hover {
+        fill: #555555 !important;
+    }
+    
+    @keyframes pulse {
+      0% {
+        fill: #ffffff;
+      }
+      100% {
+        fill: #a1a1a1;
+      }
+    }
+    
+    #piece0 {
+        animation: pulse 1s infinite alternate;
+        animation-delay: 0.5s;
+    }
+    
+    #piece1 {
+        animation: pulse 1s infinite alternate;
+        animation-delay: 1s;
+    }
+    
+    #piece2 {
+        animation: pulse 1s infinite alternate;
+        animation-delay: 1.5s;
+    }
+    
+    #piece3 {
+        animation: pulse 1s infinite alternate;
+        animation-delay: 2s;
+    }
+    
+    #piece4 {
+        animation: pulse 1s infinite alternate;
+        animation-delay: 2.5s;
+    }
+    
+    #piece5 {
+        animation: pulse 1s infinite alternate;
+        animation-delay: 3s;
+    }
+    
+    #piece6 {
+        animation: pulse 1s infinite alternate;
+        animation-delay: 3.5s;
+    }
+    
+    #piece7 {
+        animation: pulse 1s infinite alternate;
+        animation-delay: 4s;
+    }
+    
+    #piece8 {
+        animation: pulse 1s infinite alternate;
+        animation-delay: 4.5s;
     }
 </style>
 
