@@ -1,48 +1,305 @@
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <title>@miloserdev</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+  <title>@miloserdev</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Miloserdev— Senior C developer: high-performance network systems, VPP, DPDK, eBPF/XDP, Suricata, Linux kernel, embedded.">
+  <link rel="canonical" href="https://miloser.dev/">
+  <meta name="author" content="Miloserdev">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Miloserdev — Senior C Developer, Low-Level Network Systems">
+  <meta property="og:description"
+    content="VPP, DPDK, eBPF/XDP, Suricata, Linux kernel, embedded. x86, ARM, RISC-V, Elbrus E2K.">
+  <meta property="og:url" content="https://miloser.dev/">
+  <meta name="color-scheme" content="light dark">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://miloser.dev/#me",
+  "name": "Miloserdev",
+  "alternateName": ["Милосердев", "miloserdev"],
+  "url": "https://miloser.dev/",
+  "jobTitle": "Senior C developer",
+  "description": "Senior C developer specializing in low-level, high-performance network systems: VPP, DPDK, eBPF/XDP, Suricata, Linux kernel, embedded.",
+  "knowsAbout": ["C", "C++", "Rust", "Linux kernel", "VPP", "DPDK", "eBPF", "XDP", "Suricata", "netfilter", "Device Tree", "Buildroot", "OpenBMC", "x86", "ARM", "RISC-V", "Elbrus E2K"],
+  "sameAs": ["https://github.com/miloserdev", "https://t.me/miloserdev"]
+}
+</script>
+  <style>
+    :root {
+      --bg: #fff;
+      --fg: #1a1a1a;
+      --muted: #5c6370;
+      --line: #e3e5e8;
+      --accent: #0b6bcb;
+      --chip: #f1f3f5
+    }
+
+    @media (prefers-color-scheme:dark) {
+      :root {
+        --bg: #0f1115;
+        --fg: #e8eaed;
+        --muted: #9aa0a6;
+        --line: #262a31;
+        --accent: #6cb2ff;
+        --chip: #1a1e25
+      }
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 20px 64px
+    }
+
+    h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      margin: 0 0 4px
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      margin: 40px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line)
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin: 22px 0 2px
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    .sub {
+      color: var(--muted);
+      margin: 0 0 14px
+    }
+
+    .links a {
+      margin-right: 16px
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: .9rem;
+      margin: 0 0 6px
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 6px 0
+    }
+
+    li {
+      margin: 3px 0
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      list-style: none;
+      padding: 0;
+      margin: 6px 0 14px
+    }
+
+    .chips li {
+      background: var(--chip);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 2px 9px;
+      font-size: .88rem;
+      margin: 0
+    }
+
+    dt {
+      font-weight: 600;
+      margin-top: 12px
+    }
+
+    dd {
+      margin: 2px 0 0
+    }
+  </style>
 </head>
 
 <body>
+  <main>
+    <header>
+      <h1>Miloserdev</h1>
+      <p class="sub">Senior C developer · low-level network systems</p>
+      <p class="links">
+        <a href="https://github.com/miloserdev" rel="me">GitHub</a>
+        <a href="https://t.me/miloserdev" rel="me">Telegram</a>
+      </p>
+    </header>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 100" fill="currentColor">
-<g id="g1" transform="translate(15.079978)">
-    <g inkscape:groupmode="layer" id="layer3" inkscape:label="Layer 1">
-        <path
-            d="m -98.106597,-1 h 2.879995 v -5.5466579 c 0,-1.0879983 0.639999,-1.706664 1.386665,-1.706664 0.746665,0 1.386664,0.6186657 1.386664,1.706664 V -1 h 2.879996 v -5.5466579 c 0,-1.0879983 0.639999,-1.706664 1.386664,-1.706664 0.746666,0 1.386665,0.6186657 1.386665,1.706664 V -1 h 2.879995 v -5.8666574 c 0,-2.6666625 -1.386664,-4.0533266 -3.519994,-4.0533266 -0.853332,0 -1.578665,0.319999 -2.090664,0.639999 -0.298666,0.191999 -0.554666,0.4053324 -0.789332,0.6399986 -0.149333,-0.2346662 -0.362666,-0.4479996 -0.618666,-0.6399986 -0.447999,-0.32 -1.151998,-0.639999 -2.154663,-0.639999 -0.746665,0 -1.365331,0.277333 -1.791997,0.533332 -0.256,0.149333 -0.469333,0.341333 -0.661332,0.5333327 l -0.426666,-0.9599987 h -2.13333 z m 16.213312,0 h 2.879995 v -9.813318 h -2.879995 z m -0.106667,-12.47998 c 0,0.853332 0.746666,1.599997 1.599998,1.599997 0.853332,0 1.599997,-0.746665 1.599997,-1.599997 0,-0.853332 -0.746665,-1.599998 -1.599997,-1.599998 -0.853332,0 -1.599998,0.746666 -1.599998,1.599998 z M -76.879947,-1 h 2.879995 v -13.439979 h -2.879995 z m 4.586674,-4.9066589 c 0,2.8799954 2.239997,5.1199919 5.013325,5.1199919 2.773329,0 5.013326,-2.2399965 5.013326,-5.1199919 0,-2.8799955 -2.239997,-5.1199921 -5.013326,-5.1199921 -2.773328,0 -5.013325,2.2399966 -5.013325,5.1199921 z m 7.146655,0 c 0,1.5146643 -0.938665,2.4533294 -2.13333,2.4533294 -1.194664,0 -2.133329,-0.9386651 -2.133329,-2.4533294 0,-1.5146643 0.938665,-2.4533295 2.133329,-2.4533295 1.194665,0 2.13333,0.9386652 2.13333,2.4533295 z m 4.160009,1.919997 c 0.319999,1.9413302 1.599997,3.1999949 4.266659,3.1999949 2.474663,0 3.946661,-1.493331 3.946661,-3.0933285 0,-3.5199944 -5.013325,-2.9866619 -5.013325,-4.0533269 0,-0.426666 0.298666,-0.7466655 0.959998,-0.7466655 0.661332,0 1.066665,0.426666 1.173331,0.853332 l 2.773329,-0.213333 c -0.319999,-1.706664 -1.599997,-2.9866621 -4.159993,-2.9866621 -2.32533,0 -3.733327,1.3866646 -3.733327,2.9866621 0,3.5199945 5.013325,3.0079953 5.013325,4.053327 0,0.4266659 -0.426666,0.8533319 -1.173332,0.8533319 -0.746665,0 -1.173331,-0.4053327 -1.279997,-1.0666649 z m 15.999965,-0.1066665 c -0.08533,0.1279998 -0.192,0.2346662 -0.341333,0.3199994 -0.234666,0.1706664 -0.618666,0.3199995 -1.151998,0.3199995 -1.087998,0 -1.791997,-0.7466654 -2.026663,-1.4933309 h 6.719989 l 0.04267,-0.3199995 c 0.02133,-0.1919997 0.064,-0.4053327 0.064,-0.639999 0,-3.0933285 -2.13333,-5.1199921 -4.799992,-5.1199921 -2.773329,0 -5.013325,2.2399966 -5.013325,5.1199921 0,2.8799954 2.261329,5.1199919 4.906659,5.1199919 2.538662,0 4.07466,-1.493331 4.586659,-3.0933285 z m -3.519994,-2.6666625 c 0.234666,-0.853332 0.938665,-1.5999975 2.026663,-1.5999975 1.087998,0 1.791997,0.7466655 2.026663,1.5999975 z M -40.079997,-1 h 2.879995 v -5.0133254 c 0,-1.279998 0.725332,-2.0266635 1.813331,-2.0266635 0.319999,0 0.575999,0.042667 0.767998,0.1066665 l 0.298667,0.1066665 v -2.9866621 l -0.234667,-0.04267 c -0.149333,-0.02133 -0.362666,-0.064 -0.618665,-0.064 -0.746666,0 -1.322665,0.277333 -1.727998,0.597332 -0.234666,0.170666 -0.447999,0.3626662 -0.618665,0.5759991 l -0.426666,-1.0666651 h -2.13333 z m 14.613311,0 h 2.13333 v -13.439979 h -2.879996 v 4.373327 c -0.192,-0.149333 -0.405333,-0.298667 -0.661332,-0.426666 -0.426666,-0.234667 -1.045332,-0.426666 -1.791997,-0.426666 -2.45333,0 -4.58666,2.1119963 -4.58666,5.0133251 0,2.9013287 2.13333,5.0133254 4.58666,5.0133254 0.853332,0 1.535997,-0.2559996 2.026663,-0.5333325 0.277333,-0.1493331 0.511999,-0.3413328 0.746666,-0.5333325 z m -2.773329,-2.559996 c -1.194665,0 -2.13333,-0.9599984 -2.13333,-2.3466629 0,-1.3866645 0.938665,-2.346663 2.13333,-2.346663 1.194664,0 2.13333,0.9599985 2.13333,2.346663 0,1.3866645 -0.938666,2.3466629 -2.13333,2.3466629 z m 13.119986,-0.5333324 c -0.08533,0.1279998 -0.191999,0.2346662 -0.341333,0.3199994 -0.234666,0.1706664 -0.618665,0.3199995 -1.151998,0.3199995 -1.087998,0 -1.791997,-0.7466654 -2.026663,-1.4933309 h 6.719989 l 0.04267,-0.3199995 c 0.02133,-0.1919997 0.064,-0.4053327 0.064,-0.639999 0,-3.0933285 -2.13333,-5.1199921 -4.799993,-5.1199921 -2.773329,0 -5.013325,2.2399966 -5.013325,5.1199921 0,2.8799954 2.26133,5.1199919 4.906659,5.1199919 2.538662,0 4.07466,-1.493331 4.586659,-3.0933285 z m -3.519994,-2.6666625 c 0.234666,-0.853332 0.938665,-1.5999975 2.026663,-1.5999975 1.087999,0 1.791997,0.7466655 2.026664,1.5999975 z M -7.5467234,-1 h 2.986662 l 3.73332741,-9.813318 H -3.9200624 l -2.13333,6.3999901 -2.13333,-6.3999901 h -3.0933286 z"
-            transform="rotate(-90)"/>
-        <path d="M 0,0 50,50 100,0 V 100 L 79,79 V 50 L 50,79 21,50 V 79 L 0,100 Z" id="path1" />
-    </g>
-</g>
-</svg>
+    <section>
+      <h2>About</h2>
+      <p>I build high-performance network software in C/C++ and Rust: userspace and kernel packet processing, eBPF/XDP,
+        VPP, DPDK, and Suricata-based IPS. I work close to the hardware and the Linux kernel across x86, ARM, RISC-V and
+        Elbrus E2K. I take part in developing servers based on Ampere Altra, and I have written and maintained Linux
+        kernel modules, including peripheral drivers for mobile devices.</p>
+    </section>
 
-<style>
-    * {
-        box-sizing: border-box;
-    }
-    html,
-    body {
-        display: grid;
-        grid-auto-columns: 100%;
-        grid-auto-rows: 100%;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        place-items: center;
-        background: #f4f4f4;
-    }
-    svg {
-        fill: #242424;
-        width: 200px;
-    }
-</style>
+    <section>
+      <h2>Skills</h2>
+      <dl>
+        <dt>Languages</dt>
+        <dd>
+          <ul class="chips">
+            <li>C</li>
+            <li>C++</li>
+            <li>Rust</li>
+            <li>Python</li>
+            <li>JavaScript (Node.js)</li>
+          </ul>
+        </dd>
+        <dt>Networking</dt>
+        <dd>
+          <ul class="chips">
+            <li>VPP</li>
+            <li>DPDK</li>
+            <li>eBPF/XDP</li>
+            <li>Suricata</li>
+            <li>netfilter</li>
+            <li>TLS/OpenSSL</li>
+            <li>Wireshark</li>
+            <li>tcpdump</li>
+          </ul>
+        </dd>
+        <dt>Kernel and hardware</dt>
+        <dd>
+          <ul class="chips">
+            <li>Linux Kernel</li>
+            <li>Device Tree</li>
+            <li>PCIe</li>
+            <li>Drivers</li>
+            <li>Buildroot</li>
+            <li>OpenBMC</li>
+            <li>GDB / KGDB</li>
+            <li>Flamegraph</li>
+          </ul>
+        </dd>
+        <dt>Infrastructure</dt>
+        <dd>
+          <ul class="chips">
+            <li>CI/CD</li>
+            <li>Ansible</li>
+            <li>Pacemaker/Corosync</li>
+            <li>Docker</li>
+            <li>Podman</li>
+            <li>Kubernetes</li>
+          </ul>
+        </dd>
+        <dt>Architectures</dt>
+        <dd>
+          <ul class="chips">
+            <li>x86</li>
+            <li>ARM</li>
+            <li>RISC-V</li>
+            <li>Elbrus E2K</li>
+          </ul>
+        </dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <h3>Ideco — Software Engineer</h3>
+      <p class="meta">Sep 2025 – Jul 2026 · high-load network stack, real-time traffic moderation</p>
+      <ul>
+        <li>VPP plugins for L2/L3 traffic processing: forwarding, VLAN tags, packet classification</li>
+        <li>Integrated Suricata IPS into the VPP pipeline: process nodes, session timeouts, flush mechanisms</li>
+        <li>Worker threads, barrier sync, atomic operations</li>
+        <li>UU-encoding support in the smtp.rs MIME parser (Suricata 8, Rust)</li>
+        <li>TLS/SSL inspection: TCP proxy, connection contexts, TLS profiles</li>
+        <li>Patches to Linux network components (libnetfilter_conntrack, libnetfilter_queue)</li>
+        <li>Hot-path optimization: zero-copy, queue splitting</li>
+        <li>GDB debugging, code review and mentoring on multithreading and memory handling</li>
+      </ul>
+
+      <h3>SmartEcoSystem — Software Engineer</h3>
+      <p class="meta">Jun 2024 – Aug 2025 · Linux-based smartphones and tablets</p>
+      <ul>
+        <li>AYYA TrustPhone: RootFS and Linux kernel for Rockchip RK3588 and MediaTek MT6771V</li>
+        <li>R&amp;D Elvees: Alt Linux (Simply) via Buildroot, Device Tree and drivers (display, touchpad, fingerprint
+          sensor, charge controller)</li>
+      </ul>
+
+      <h3>NII Mashtab — Software Engineer</h3>
+      <p class="meta">Oct 2023 – Aug 2025 · virtualization platform</p>
+      <ul>
+        <li>Ported the VeiL product to ARM and RISC-V; adapted software for Elbrus E2K</li>
+        <li>OpenBMC (Aspeed AST2500) and firmware (BIOS) modifications</li>
+        <li>eBPF/XDP traffic filter with a userspace perceptron in C with AVX-accelerated inference, BPF maps between
+          kernel and userspace</li>
+        <li>Qt5 thin client for Kaspersky OS with token support (eToken, JaCarta, Rutoken); passed Kaspersky Lab testing
+        </li>
+        <li>FastAPI clustering microservice (Pacemaker, Corosync, LVM, iSCSI, Multipath, systemd), shipped in the
+          product release</li>
+        <li>CI/CD pipelines and deployment automation with Ansible</li>
+      </ul>
+
+      <h3>SimbirSoft — Software Engineer</h3>
+      <p class="meta">May 2024 – May 2025 · Scanfactor project, hardware processing and computer vision</p>
+      <ul>
+        <li>NVIDIA Tegra drivers for Jetson Nano, PCIe subsystem, Device Tree changes</li>
+        <li>Team code review (C, Python)</li>
+      </ul>
+
+      <h3>RUDN University — Software Engineer</h3>
+      <p class="meta">Jun 2020 – Aug 2022 · system administration</p>
+      <ul>
+        <li>REST API and backend for a class-schedule monitoring web app (Python)</li>
+        <li>Linux server administration for the university learning portal, automation scripts</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li>RUDN University — Applied Informatics in Economics, software engineer, expected 2028</li>
+        <li>RUDN University — Programming in Computer Systems, programmer technician, 2021</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Telegram: <a href="https://t.me/miloserdev" rel="me">@miloserdev</a> · GitHub: <a
+          href="https://github.com/miloserdev" rel="me">miloserdev</a></p>
+    </section>
+  </main>
 </body>
 
 </html>
