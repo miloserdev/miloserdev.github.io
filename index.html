@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <!-- GENERATED from template.html + README.md by build.py. Do not edit index.html by hand. -->
   <title>@miloserdev</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -30,7 +31,7 @@
   "url": "https://miloser.dev/",
   "jobTitle": "Senior C developer",
   "description": "Senior C developer specializing in low-level, high-performance network systems: VPP, DPDK, eBPF/XDP, Suricata, Linux kernel, embedded.",
-  "knowsAbout": ["C", "C++", "Rust", "Linux kernel", "VPP", "DPDK", "eBPF", "XDP", "Suricata", "netfilter", "Device Tree", "Buildroot", "OpenBMC", "x86", "ARM", "RISC-V", "Elbrus E2K"],
+  "knowsAbout": ["C", "C++", "Rust", "Python", "JavaScript (Node.js)", "VPP", "DPDK", "eBPF/XDP", "Suricata IPS", "netfilter", "conntrack", "nfqueue", "TLS/OpenSSL", "Wireshark", "tcpdump", "Linux Kernel", "Kernel Modules", "Device Drivers", "Device Tree", "PCIe", "Buildroot", "OpenBMC", "Mellanox OFED", "GDB / KGDB", "Flamegraph", "KVM", "LXC", "QEMU", "Proxmox", "Pacemaker/Corosync", "LVM", "iSCSI", "Multipath", "CI/CD", "Ansible", "Docker", "Podman", "Kubernetes", "Harbor", "Git", "x86-64", "ARM (aarch64)", "RISC-V", "Elbrus E2K"],
   "sameAs": ["https://github.com/miloserdev", "https://t.me/miloserdev"]
 }
 </script>
@@ -149,6 +150,42 @@
     dd {
       margin: 2px 0 0
     }
+    .projects {
+      display: grid;
+      gap: 14px
+    }
+
+    .card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px
+    }
+
+    .card .shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid var(--line)
+    }
+
+    .card .txt {
+      overflow-wrap: anywhere
+    }
+
+    .card .txt:only-child {
+      grid-column: 1 / -1
+    }
+
+    @media (max-width:600px) {
+      .card {
+        grid-template-columns: 1fr
+      }
+    }
   </style>
 </head>
 
@@ -156,148 +193,192 @@
   <main>
     <header>
       <h1>Miloserdev</h1>
-      <p class="sub">Senior C developer · low-level network systems</p>
+      <p class="sub">Senior C engineer · low-level and high-performance network systems</p>
       <p class="links">
-        <a href="https://github.com/miloserdev" rel="me">GitHub</a>
-        <a href="https://t.me/miloserdev" rel="me">Telegram</a>
+        <a href="https://github.com/miloserdev" rel="me">GitHub</a> <a href="https://t.me/miloserdev" rel="me">Telegram</a>
       </p>
     </header>
 
     <section>
       <h2>About</h2>
-      <p>I build high-performance network software in C/C++ and Rust: userspace and kernel packet processing, eBPF/XDP,
-        VPP, DPDK, and Suricata-based IPS. I work close to the hardware and the Linux kernel across x86, ARM, RISC-V and
-        Elbrus E2K. I take part in developing servers based on Ampere Altra, and I have written and maintained Linux
-        kernel modules, including peripheral drivers for mobile devices.</p>
+      <p>Senior C/C++ engineer with 5+ years of commercial experience. My focus is high-performance network software and low-level systems: userspace and kernel packet processing (eBPF/XDP, VPP, DPDK, Suricata-based IPS), and Linux kernel work close to the hardware. I've shipped across x86-64, ARM (aarch64), RISC-V and Elbrus E2K: bringing up and porting system software on new server platforms, writing kernel modules and device drivers, building out ARM datacenter and virtualization stacks.</p>
     </section>
 
     <section>
       <h2>Skills</h2>
       <dl>
-        <dt>Languages</dt>
-        <dd>
-          <ul class="chips">
-            <li>C</li>
-            <li>C++</li>
-            <li>Rust</li>
-            <li>Python</li>
-            <li>JavaScript (Node.js)</li>
-          </ul>
-        </dd>
-        <dt>Networking</dt>
-        <dd>
-          <ul class="chips">
-            <li>VPP</li>
-            <li>DPDK</li>
-            <li>eBPF/XDP</li>
-            <li>Suricata</li>
-            <li>netfilter</li>
-            <li>TLS/OpenSSL</li>
-            <li>Wireshark</li>
-            <li>tcpdump</li>
-          </ul>
-        </dd>
-        <dt>Kernel and hardware</dt>
-        <dd>
-          <ul class="chips">
-            <li>Linux Kernel</li>
-            <li>Device Tree</li>
-            <li>PCIe</li>
-            <li>Drivers</li>
-            <li>Buildroot</li>
-            <li>OpenBMC</li>
-            <li>GDB / KGDB</li>
-            <li>Flamegraph</li>
-          </ul>
-        </dd>
-        <dt>Infrastructure</dt>
-        <dd>
-          <ul class="chips">
-            <li>CI/CD</li>
-            <li>Ansible</li>
-            <li>Pacemaker/Corosync</li>
-            <li>Docker</li>
-            <li>Podman</li>
-            <li>Kubernetes</li>
-          </ul>
-        </dd>
-        <dt>Architectures</dt>
-        <dd>
-          <ul class="chips">
-            <li>x86</li>
-            <li>ARM</li>
-            <li>RISC-V</li>
-            <li>Elbrus E2K</li>
-          </ul>
-        </dd>
+      <dt>Languages</dt>
+      <dd>
+      <ul class="chips">
+      <li>C</li>
+      <li>C++</li>
+      <li>Rust</li>
+      <li>Python</li>
+      <li>JavaScript (Node.js)</li>
+      </ul>
+      </dd>
+      <dt>Networking &amp; Dataplane</dt>
+      <dd>
+      <ul class="chips">
+      <li>VPP</li>
+      <li>DPDK</li>
+      <li>eBPF/XDP</li>
+      <li>Suricata IPS</li>
+      <li>netfilter</li>
+      <li>conntrack</li>
+      <li>nfqueue</li>
+      <li>TLS/OpenSSL</li>
+      <li>Wireshark</li>
+      <li>tcpdump</li>
+      </ul>
+      </dd>
+      <dt>Linux Kernel &amp; Hardware</dt>
+      <dd>
+      <ul class="chips">
+      <li>Linux Kernel</li>
+      <li>Kernel Modules</li>
+      <li>Device Drivers</li>
+      <li>Device Tree</li>
+      <li>PCIe</li>
+      <li>Buildroot</li>
+      <li>OpenBMC</li>
+      <li>Mellanox OFED</li>
+      <li>GDB / KGDB</li>
+      <li>Flamegraph</li>
+      </ul>
+      </dd>
+      <dt>Virtualization &amp; Clustering</dt>
+      <dd>
+      <ul class="chips">
+      <li>KVM</li>
+      <li>LXC</li>
+      <li>QEMU</li>
+      <li>Proxmox</li>
+      <li>Pacemaker/Corosync</li>
+      <li>LVM</li>
+      <li>iSCSI</li>
+      <li>Multipath</li>
+      </ul>
+      </dd>
+      <dt>Infrastructure &amp; Tooling</dt>
+      <dd>
+      <ul class="chips">
+      <li>CI/CD</li>
+      <li>Ansible</li>
+      <li>Docker</li>
+      <li>Podman</li>
+      <li>Kubernetes</li>
+      <li>Harbor</li>
+      <li>Git</li>
+      </ul>
+      </dd>
+      <dt>Architectures</dt>
+      <dd>
+      <ul class="chips">
+      <li>x86-64</li>
+      <li>ARM (aarch64)</li>
+      <li>RISC-V</li>
+      <li>Elbrus E2K</li>
+      </ul>
+      </dd>
       </dl>
     </section>
 
     <section>
       <h2>Experience</h2>
-
+      <h3>E-FLOPS — Software Engineer</h3>
+      <p class="meta">Aug 2026 – present · ARM server platforms, virtualization, server firmware</p>
+      <ul>
+        <li>Building out an ARM (aarch64) server platform and datacenter: porting system software, building custom Linux kernels.</li>
+        <li>Ported Proxmox to ARM on Debian 13. Custom KVM-enabled kernel plus dependency shims to install it without Proxmox's own kernel.</li>
+        <li>Kasm running on ARM under ALT Linux Server 11.1. Kernels built with Mellanox OFED support; Harbor registry built for aarch64.</li>
+        <li>Maintain OpenBMC on in-house boards (Aspeed, mickledore/styhead): isolate downstream patches against each board's upstream base and rebase them onto the target upstream. Rebranded webui-vue.</li>
+        <li>Architecting an ARM hosting/cloud with billing: KVM/LXC, per-tenant virtual networks, self-service vCPU/RAM/disk configurator (Vite + shadcn/ui).</li>
+        <li>GPU-offload R&amp;D comparing aarch64 against x86 on cost and energy. SIMD compute kernels (AVX on x86, NEON on ARM), Ampere Altra Max 128-core vs EPYC 7742.</li>
+      </ul>
       <h3>Ideco — Software Engineer</h3>
       <p class="meta">Sep 2025 – Jul 2026 · high-load network stack, real-time traffic moderation</p>
       <ul>
-        <li>VPP plugins for L2/L3 traffic processing: forwarding, VLAN tags, packet classification</li>
-        <li>Integrated Suricata IPS into the VPP pipeline: process nodes, session timeouts, flush mechanisms</li>
-        <li>Worker threads, barrier sync, atomic operations</li>
-        <li>UU-encoding support in the smtp.rs MIME parser (Suricata 8, Rust)</li>
-        <li>TLS/SSL inspection: TCP proxy, connection contexts, TLS profiles</li>
-        <li>Patches to Linux network components (libnetfilter_conntrack, libnetfilter_queue)</li>
-        <li>Hot-path optimization: zero-copy, queue splitting</li>
-        <li>GDB debugging, code review and mentoring on multithreading and memory handling</li>
+        <li>Developed VPP plugins for L2/L3 traffic: forwarding, VLAN tagging, packet classification.</li>
+        <li>Integrated Suricata IPS into the VPP pipeline (process nodes, session timeouts, flush mechanisms).</li>
+        <li>Multithreading: worker threads, barrier sync, atomics.</li>
+        <li>Added UU-encoding to the smtp.rs MIME parser (Suricata 8, Rust).</li>
+        <li>TLS/SSL inspection: TCP proxy, connection contexts, TLS profiles.</li>
+        <li>Patched Linux netfilter components (libnetfilter_conntrack, libnetfilter_queue).</li>
+        <li>Hot-path optimization: zero-copy, queue splitting.</li>
+        <li>GDB debugging, code review, and mentoring the team on multithreading and memory.</li>
       </ul>
-
       <h3>SmartEcoSystem — Software Engineer</h3>
-      <p class="meta">Jun 2024 – Aug 2025 · Linux-based smartphones and tablets</p>
+      <p class="meta">Jun 2024 – Aug 2025 · part-time (0.5 FTE), subsidiary of NII Mashtab · Linux smartphones and tablets</p>
       <ul>
-        <li>AYYA TrustPhone: RootFS and Linux kernel for Rockchip RK3588 and MediaTek MT6771V</li>
-        <li>R&amp;D Elvees: Alt Linux (Simply) via Buildroot, Device Tree and drivers (display, touchpad, fingerprint
-          sensor, charge controller)</li>
+        <li>Built RootFS and the Linux kernel for the AYYA TrustPhone (Rockchip RK3588, MediaTek MT6771V).</li>
+        <li>R&amp;D at Elvees: ALT Linux (Simply) via Buildroot, Device Tree, and drivers for display, touchpad, fingerprint sensor and charge controller.</li>
       </ul>
-
       <h3>NII Mashtab — Software Engineer</h3>
       <p class="meta">Oct 2023 – Aug 2025 · virtualization platform</p>
       <ul>
-        <li>Ported the VeiL product to ARM and RISC-V; adapted software for Elbrus E2K</li>
-        <li>OpenBMC (Aspeed AST2500) and firmware (BIOS) modifications</li>
-        <li>eBPF/XDP traffic filter with a userspace perceptron in C with AVX-accelerated inference, BPF maps between
-          kernel and userspace</li>
-        <li>Qt5 thin client for Kaspersky OS with token support (eToken, JaCarta, Rutoken); passed Kaspersky Lab testing
-        </li>
-        <li>FastAPI clustering microservice (Pacemaker, Corosync, LVM, iSCSI, Multipath, systemd), shipped in the
-          product release</li>
-        <li>CI/CD pipelines and deployment automation with Ansible</li>
+        <li>Ported the VeiL virtualization product to ARM and RISC-V; adapted it for Elbrus E2K.</li>
+        <li>Modified OpenBMC (Aspeed AST2500) and BIOS firmware.</li>
+        <li>Built an eBPF/XDP traffic filter with a userspace perceptron in C (AVX-accelerated inference), sharing BPF maps between kernel and userspace.</li>
+        <li>Qt5 thin client for Kaspersky OS with hardware-token support (eToken, JaCarta, Rutoken). Passed Kaspersky Lab testing.</li>
+        <li>FastAPI clustering microservice (Pacemaker, Corosync, LVM, iSCSI, Multipath, systemd), shipped in the product release.</li>
+        <li>CI/CD pipelines and deployment automation with Ansible.</li>
       </ul>
-
       <h3>SimbirSoft — Software Engineer</h3>
-      <p class="meta">May 2024 – May 2025 · Scanfactor project, hardware processing and computer vision</p>
+      <p class="meta">May 2024 – May 2025 · contract · Scanfactor, hardware processing and computer vision</p>
       <ul>
-        <li>NVIDIA Tegra drivers for Jetson Nano, PCIe subsystem, Device Tree changes</li>
-        <li>Team code review (C, Python)</li>
+        <li>Developed NVIDIA Tegra drivers for the Jetson Nano (PCIe subsystem, Device Tree changes).</li>
+        <li>Team code review (C, Python).</li>
       </ul>
-
       <h3>RUDN University — Software Engineer</h3>
       <p class="meta">Jun 2020 – Aug 2022 · system administration</p>
       <ul>
-        <li>REST API and backend for a class-schedule monitoring web app (Python)</li>
-        <li>Linux server administration for the university learning portal, automation scripts</li>
+        <li>REST API and backend for a class-schedule monitoring web app (Python).</li>
+        <li>Administered Linux servers for the university learning portal; wrote automation scripts.</li>
+        <li>Prototyped a smart-home system on ESP32/ESP8266 (firmware in C).</li>
       </ul>
     </section>
 
     <section>
       <h2>Education</h2>
       <ul>
-        <li>RUDN University — Applied Informatics in Economics, software engineer, expected 2028</li>
-        <li>RUDN University — Programming in Computer Systems, programmer technician, 2021</li>
+        <li><strong>RUDN University</strong>, Applied Informatics in Economics (software engineer, expected 2028)</li>
+        <li><strong>RUDN University</strong>, Programming in Computer Systems (programmer technician, 2021)</li>
       </ul>
     </section>
 
     <section>
+      <h2>Projects</h2>
+      <div class="projects">
+      <article class="card">
+        <div class="shot"><img src="https://github.com/miloserdev/fl0w/raw/master/docs/images/screenshot.png" alt="" loading="lazy"></div>
+        <div class="txt"><a href="https://github.com/miloserdev/fl0w">FL0W</a> lets you build automations by dragging <strong>blocks</strong> onto a canvas and wiring their ports together</div>
+      </article>
+      <article class="card">
+        <div class="shot"><img src="https://github.com/miloserdev/newspaper/raw/master/docs/screenshot.png" alt="" loading="lazy"></div>
+        <div class="txt"><a href="https://github.com/miloserdev/newspaper">Newspaper</a> — <strong>A file-based news engine.</strong> Point it at a folder of markdown files</div>
+      </article>
+      <article class="card">
+        <div class="txt"><a href="https://github.com/miloserdev/xcale">xcale</a> — A panel for clustered machines testing</div>
+      </article>
+      <article class="card">
+        <div class="txt"><strong><a href="https://github.com/miloserdev/copydisk">copydisk</a></strong></div>
+        <div class="txt">A "mini slice" of a GPT disk<br>Turns a big disk (e.g. a 256 GB NVMe: EFI + root, ~2 GB used) into a small sparse image file that keeps <strong>all identifiers</strong></div>
+      </article>
+      <article class="card">
+        <div class="txt"><strong><a href="https://github.com/miloserdev/net_neural_filter">net_neural_filter</a></strong></div>
+        <div class="txt">eBPF/XDP packet filter with a neural-network (perceptron) classifier for adaptive DDoS and anomaly detection. XDP runs in the kernel data path; events reach userspace over a</div>
+      </article>
+      <article class="card">
+        <div class="txt"><strong><a href="https://github.com/miloserdev/xec">xec</a></strong></div>
+        <div class="txt">Embedded Controller (EC) utility in C for ST and Nuvoton ECs. Controls LEDs, fan speed, charging and the Wi-Fi/Bluetooth power switch, and watches EC memory for changes.</div>
+      </article>
+      </div>
+    </section>
+
+    <section>
       <h2>Contact</h2>
-      <p>Telegram: <a href="https://t.me/miloserdev" rel="me">@miloserdev</a> · GitHub: <a
-          href="https://github.com/miloserdev" rel="me">miloserdev</a></p>
+      <p>GitHub: <a href="https://github.com/miloserdev" rel="me">miloserdev</a> · Telegram: <a href="https://t.me/miloserdev" rel="me">@miloserdev</a></p>
     </section>
   </main>
 </body>

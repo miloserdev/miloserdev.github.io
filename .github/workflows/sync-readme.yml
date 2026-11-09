@@ -1,0 +1,44 @@
+name: Sync index.html from profile README
+
+on:
+  schedule:
+    - cron: "17 * * * *"          # hourly fallback
+  workflow_dispatch:
+  repository_dispatch:
+    types: [readme-updated]       # sent by miloserdev/miloserdev on README change
+  push:
+    paths: [template.html, build.py]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-readme
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 build.py
+      - name: Commit if changed
+        id: commit
+        run: |
+          git diff --quiet -- index.html && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Sync index.html from profile README"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Notify search engines (IndexNow)
+        if: steps.commit.outputs.changed == 'true'
+        continue-on-error: true       # never fail the sync because of a ping
+        run: |
+          sleep 90                    # let GitHub Pages publish the new page first
+          KEY=c80aad45db0ed108ce56fbb94fe43a86
+          for host in api.indexnow.org yandex.com www.bing.com; do
+            curl -sS -o /dev/null -w "$host -> %{http_code}\n" \
+              "https://$host/indexnow?url=https://miloser.dev/&key=$KEY" || true
+          done
