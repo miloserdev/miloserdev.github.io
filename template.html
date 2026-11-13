@@ -3,199 +3,249 @@
 
 <head>
   <!-- GENERATED from template.html + README.md by build.py. Do not edit index.html by hand. -->
-  <title>@miloserdev</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Miloserdev— Senior C developer: high-performance network systems, VPP, DPDK, eBPF/XDP, Suricata, Linux kernel, embedded.">
+  <meta name="color-scheme" content="dark light">
+  <title>{{MAN}} – {{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
   <link rel="canonical" href="https://miloser.dev/">
   <link rel="icon" href="/icon-32.png" type="image/png" sizes="32x32">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="author" content="Miloserdev">
+  <meta name="author" content="{{NAME}}">
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Miloserdev — Senior C Developer, Low-Level Network Systems">
-  <meta property="og:description"
-    content="VPP, DPDK, eBPF/XDP, Suricata, Linux kernel, embedded. x86, ARM, RISC-V, Elbrus E2K.">
+  <meta property="og:title" content="{{NAME}} – {{TITLE}}">
+  <meta property="og:description" content="{{DESCRIPTION}}">
   <meta property="og:url" content="https://miloser.dev/">
-  <meta name="color-scheme" content="light dark">
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://miloser.dev/#me",
-  "name": "Miloserdev",
-  "alternateName": ["Милосердев", "miloserdev"],
-  "url": "https://miloser.dev/",
-  "jobTitle": "Senior C developer",
-  "description": "Senior C developer specializing in low-level, high-performance network systems: VPP, DPDK, eBPF/XDP, Suricata, Linux kernel, embedded.",
-  "knowsAbout": {{KNOWS_ABOUT}},
-  "sameAs": ["https://github.com/miloserdev", "https://t.me/miloserdev"]
-}
+{{JSONLD}}
 </script>
   <style>
+    /* manpage layout + dark theme, normalized from ronn-ng "man" and "dark" styles */
     :root {
-      --bg: #fff;
-      --fg: #1a1a1a;
-      --muted: #5c6370;
-      --line: #e3e5e8;
-      --accent: #0b6bcb;
-      --chip: #f1f3f5
+      --bg: #080706;
+      --fg: #888;
+      --code: #aaa;
+      --pre-code: #ddd;
+      --strong: #fff;
+      --em: #ddd;
+      --heading: #fff;
+      --link: #fff;
+      --decor: #666;
+      --ref: #aaa;
     }
 
-    @media (prefers-color-scheme:dark) {
+    @media (prefers-color-scheme: light) {
       :root {
-        --bg: #0f1115;
-        --fg: #e8eaed;
-        --muted: #9aa0a6;
-        --line: #262a31;
-        --accent: #6cb2ff;
-        --chip: #1a1e25
+        --bg: #fff;
+        --fg: #333;
+        --code: #131211;
+        --pre-code: #434241;
+        --strong: #131211;
+        --em: #232221;
+        --heading: #030201;
+        --link: #0000ff;
+        --decor: #999;
+        --ref: #434241;
       }
     }
 
     * {
-      box-sizing: border-box
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
+      margin: 0 auto;
+      max-width: 100ex;
+      padding: 0 9ex 1ex 4ex;
       background: var(--bg);
       color: var(--fg);
-      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif
+      font: 14px/1.5 monospace;
     }
 
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 20px 64px
+    @media (max-width: 640px) {
+      body {
+        padding: 0 2ex 1ex;
+      }
+
+      p,
+      pre,
+      ul,
+      ol,
+      dl {
+        margin-left: 2ex;
+      }
+
+      dd {
+        margin-left: 4ex;
+      }
     }
 
-    h1 {
-      font-size: 2rem;
-      line-height: 1.2;
-      margin: 0 0 4px
+    /* block rhythm */
+    p,
+    pre,
+    ul,
+    ol,
+    dl {
+      margin: 0 0 20px 8ex;
+    }
+
+    h1,
+    h2,
+    h3 {
+      clear: left;
+    }
+
+    h1.man-title {
+      display: none;
     }
 
     h2 {
-      font-size: 1.15rem;
-      margin: 40px 0 12px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--line)
+      margin: 22px 0 4px;
+      font-size: 16px;
+      line-height: 1.25;
     }
 
     h3 {
-      font-size: 1rem;
-      margin: 22px 0 2px
+      margin: 0 0 0 4ex;
+      font-size: 14px;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none
+    h1,
+    h2,
+    h3 {
+      color: var(--heading);
+      font-family: inherit;
     }
 
-    a:hover {
-      text-decoration: underline
-    }
-
-    .sub {
-      color: var(--muted);
-      margin: 0 0 14px
-    }
-
-    .links a {
-      margin-right: 16px
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: .9rem;
-      margin: 0 0 6px
+    h2+pre,
+    h3+pre {
+      margin-top: 5px;
     }
 
     ul {
-      padding-left: 20px;
-      margin: 6px 0
-    }
-
-    li {
-      margin: 3px 0
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      list-style: none;
-      padding: 0;
-      margin: 6px 0 14px
-    }
-
-    .chips li {
-      background: var(--chip);
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      padding: 2px 9px;
-      font-size: .88rem;
-      margin: 0
+      padding-left: 2ex;
     }
 
     dt {
-      font-weight: 600;
-      margin-top: 12px
+      margin: 0;
+      clear: left;
     }
 
     dd {
-      margin: 2px 0 0
-    }
-    .projects {
-      display: grid;
-      gap: 14px
+      margin: 0 0 8px 9ex;
     }
 
-    .card {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 16px;
-      align-items: start;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 12px
+    dd:last-child {
+      margin-bottom: 0;
     }
 
-    .card .shot img {
-      display: block;
+    dl {
+      margin-bottom: 20px;
+    }
+
+    h3+p {
+      margin-bottom: 8px;
+    }
+
+    /* inline */
+    code,
+    kbd,
+    samp,
+    tt {
+      color: var(--code);
+      font: inherit;
+      font-weight: bold;
+    }
+
+    strong,
+    b {
+      color: var(--strong);
+      font-weight: bold;
+    }
+
+    em,
+    var {
+      color: var(--em);
+      font-style: italic;
+    }
+
+    a,
+    a:link,
+    a:visited,
+    a:hover {
+      color: var(--link);
+    }
+
+    .man-ref {
+      color: var(--ref);
+    }
+
+    pre {
+      padding: 0 4ex;
+      overflow-x: auto;
+    }
+
+    pre code {
+      color: var(--pre-code);
+      font-weight: normal;
+    }
+
+    /* header / footer strips */
+    ol.man-decor,
+    ol.man-decor li {
+      margin: 3px 0 10px;
+      padding: 0;
+      float: left;
+      width: 33%;
+      list-style: none;
+      text-transform: uppercase;
+      color: var(--decor);
+      letter-spacing: 1px;
+    }
+
+    ol.man-decor {
       width: 100%;
-      height: auto;
-      border-radius: 6px;
-      border: 1px solid var(--line)
     }
 
-    .card .txt {
-      overflow-wrap: anywhere
+    ol.man-decor li.tl {
+      text-align: left;
     }
 
-    .card .txt:only-child {
-      grid-column: 1 / -1
+    ol.man-decor li.tc {
+      text-align: center;
+      letter-spacing: 4px;
     }
 
-    @media (max-width:600px) {
-      .card {
-        grid-template-columns: 1fr
-      }
+    ol.man-decor li.tr {
+      text-align: right;
+      float: right;
+    }
+
+    ol.man-foot {
+      margin-top: 24px;
     }
   </style>
 </head>
 
-<body>
-  <main>
+<body id="manpage">
+
+  <ol class="man-decor man-head man head">
+    <li class="tl">{{MAN}}</li>
+    <li class="tc">Resume Manual</li>
+    <li class="tr">{{MAN}}</li>
+  </ol>
+
+  <h1 class="man-title">{{MAN}} – {{TITLE}}</h1>
+
 {{BODY}}
-  </main>
+
+  <ol class="man-decor man-foot man foot">
+    <li class="tl"></li>
+    <li class="tc">{{DATE}}</li>
+    <li class="tr">{{MAN}}</li>
+  </ol>
+
 </body>
 
 </html>
