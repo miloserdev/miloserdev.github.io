@@ -1,0 +1,8 @@
+# Miloserdev
+
+> Senior C developer working on low-level systems: Linux kernel and drivers, VPP + DPDK, eBPF/XDP, embedded firmware, server platforms (ARM and x86), and developer tools.
+
+## Contact
+
+- [GitHub](https://github.com/miloserdev)
+- [Telegram](https://t.me/miloserdev)
