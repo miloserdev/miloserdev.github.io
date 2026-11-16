@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:miloser.dev:profile:max-miloserdev",
+      "displayName": "Max Miloserdev — Senior C Developer",
+      "type": "text/html",
+      "url": "https://miloser.dev/",
+      "description": "Personal site of Max Miloserdev: low-level networking software in C and Rust, VPP, eBPF/XDP, Linux kernel, Suricata.",
+      "representativeQueries": [
+        "who is Max Miloserdev",
+        "senior C developer with VPP and eBPF experience",
+        "network software developer in C and Rust"
+      ]
+    }
+  ]
+}
