@@ -27,7 +27,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir _site
-          cp -r index.html css js img .well-known CNAME robots.txt llms.txt \
+          cp -r index.html .well-known CNAME robots.txt llms.txt \
             favicon.ico icon-32.png apple-touch-icon.png \
             c80aad45db0ed108ce56fbb94fe43a86.txt _site/
       - uses: actions/upload-pages-artifact@v3
