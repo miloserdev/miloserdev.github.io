@@ -146,6 +146,13 @@ ALIASES = {"About": "Description", "Contact": "Author"}
 COMMAND = "λ"                      # command name shown in SYNOPSIS
 SITE_URL = "https://miloser.dev/"
 ALTERNATE_NAMES = ["Милосердев", "miloserdev"]
+# Extra profiles for JSON-LD sameAs only (README links already go there; these stay out of SYNOPSIS)
+EXTRA_SAME_AS = [
+    "https://community.arm.com/members/max--miloserdev_5f00_1014",
+    "https://dev.to/miloserdev",
+    "https://www.reddit.com/user/miloserdev/",
+    "https://huggingface.co/miloserdev",
+]
 SYNOPSIS_SKIP = {"DESCRIPTION"}        # sections not listed as subcommands
 # skill chip (substring) -> man page for SEE ALSO; listed only if the skill is in the README
 MAN_REFS = [("VPP", "vpp", 8), ("eBPF", "bpf", 2), ("Suricata", "suricata", 1),
@@ -218,7 +225,7 @@ def build(md):
             "jobTitle": plain(sub_plain),
             "description": plain(about),
             "knowsAbout": list(dict.fromkeys(collected)),
-            "sameAs": [u for _, u in link_list],
+            "sameAs": list(dict.fromkeys([u for _, u in link_list] + EXTRA_SAME_AS)),
         },
     }
     # json.dumps escapes quotes; "<" is escaped so README text can't close the <script> block
