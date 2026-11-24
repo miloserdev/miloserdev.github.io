@@ -6,3 +6,5 @@
 
 - [GitHub](https://github.com/miloserdev)
 - [Telegram](https://t.me/miloserdev)
+- [HuggingFace](https://huggingface.co/miloserdev)
+- [Dev.to](https://dev.to/miloserdev)
