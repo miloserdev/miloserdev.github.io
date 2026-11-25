@@ -75,8 +75,7 @@ def table(rows):
                 width = width_match.group(1) if width_match else "200px"
 
                 img = (
-                    f'<img alt="{alt}" src="{src}" '
-                    f'style="width: {html.escape(width, quote=True)}; ">'
+                    f'<a target="_blank" href="{src}"><img src="{src}" alt="{alt}" style="width: {html.escape(width, quote=True)}; " ></img></a>'
                 )
 
             txt = txt[:img_match.start()] + txt[img_match.end():]
