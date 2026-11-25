@@ -64,6 +64,16 @@
       font: 14px/1.5 monospace;
     }
 
+    @media (max-width: 780px) {
+      dx {
+        grid-auto-flow: row !important;
+      }
+
+      dd {
+        margin: 0;
+      }
+    }
+
     @media (max-width: 640px) {
       body {
         padding: 0 2ex 1ex;
@@ -78,7 +88,7 @@
       }
 
       dd {
-        margin-left: 4ex;
+        /* margin-left: 4ex; */
       }
     }
 
@@ -142,6 +152,12 @@
       grid-auto-flow: column;
       place-items: start;
       margin-bottom: 5ex;
+    }
+
+    img {
+      border: 1px solid white;
+      max-width: 250px;
+      object-fit: contain;
     }
 
     dd:last-child {

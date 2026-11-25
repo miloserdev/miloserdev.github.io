@@ -76,8 +76,7 @@ def table(rows):
 
                 img = (
                     f'<img alt="{alt}" src="{src}" '
-                    f'style="max-width: 200px; width: {html.escape(width, quote=True)}; '
-                    f'object-fit: contain;">'
+                    f'style="width: {html.escape(width, quote=True)}; ">'
                 )
 
             txt = txt[:img_match.start()] + txt[img_match.end():]
