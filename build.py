@@ -44,26 +44,82 @@ def split_row(ln):
 
 
 def table(rows):
-    """Projects table -> <dl>. Screenshots are dropped (terminal look); the first
-    link of the text cell becomes <dt>, the rest <dd>."""
+    """Projects table -> <dl> with inline image + description."""
     cells = [split_row(r) for r in rows]
     cells = [r for r in cells if not all(re.fullmatch(r":?-{3,}:?", c) for c in r)]
+
     out = []
+
     for r in cells:
-        txt = " ".join(c for c in r if c and not c.lower().startswith("<img"))
+        txt = " ".join(c for c in r if c)
         if not txt:
             continue
-        m = re.match(r"\s*(?:\*\*)?\[([^\]]+)\]\(([^)\s]+)\)(?:\*\*)?\s*(.*)", txt, re.S)
+
+        # Extract the first Markdown image
+        img_match = re.search(r"!\[([^\]]*)\]\(([^)\s]+)(?:\s+[^)]*)?\)", txt)
+        # Extract HTML <img> or Markdown image
+        img = ""
+
+        img_match = re.search(r'<img\b([^>]*)>', txt, re.I)
+
+        if img_match:
+            attrs = img_match.group(1)
+
+            src_match = re.search(r'\bsrc=["\']([^"\']+)["\']', attrs, re.I)
+            alt_match = re.search(r'\balt=["\']([^"\']*)["\']', attrs, re.I)
+            width_match = re.search(r'\bwidth=["\']([^"\']+)["\']', attrs, re.I)
+
+            if src_match:
+                src = html.escape(src_match.group(1), quote=True)
+                alt = html.escape(alt_match.group(1), quote=True) if alt_match else "img"
+                width = width_match.group(1) if width_match else "200px"
+
+                img = (
+                    f'<img alt="{alt}" src="{src}" '
+                    f'style="max-width: 200px; width: {html.escape(width, quote=True)}; '
+                    f'object-fit: contain;">'
+                )
+
+            txt = txt[:img_match.start()] + txt[img_match.end():]
+
+        # Remove remaining HTML images if present
+        txt = re.sub(r"<img\b[^>]*>", "", txt, flags=re.I)
+
+        m = re.match(
+            r"\s*(?:\*\*)?\[([^\]]+)\]\(([^)\s]+)\)(?:\*\*)?\s*(.*)",
+            txt,
+            re.S
+        )
+
         if m:
             name, url, rest = m.groups()
             rest = re.sub(r"^[—–-]\s*", "", rest.strip())
-            dt = f'<a href="{html.escape(url)}"><strong>{html.escape(name.lower(), quote=False)}</strong></a>'
+            dt = (
+                f'<a href="{html.escape(url)}">'
+                f'<strong>{html.escape(name.lower(), quote=False)}</strong>'
+                f'</a>'
+            )
         else:
             dt, rest = None, txt
-        rest = "<br>\n    ".join(inline(p) for p in re.split(r"<br\s*/?>", rest, flags=re.I) if p.strip())
+
+        rest = "<br>\n    ".join(
+            inline(p)
+            for p in re.split(r"<br\s*/?>", rest, flags=re.I)
+            if p.strip()
+        )
+
         if dt:
             out.append(f"<dt>{dt}</dt>")
-        out.append(f"<dd>{rest}</dd>")
+
+        dd = f"<dd>{rest}</dd>"
+
+        
+        out.append(
+            '<dx>'
+            f'{img}\n{dd}'
+            '</dx>'
+        )
+
     return "<dl>\n  " + "\n  ".join(out) + "\n</dl>"
 
 

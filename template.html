@@ -57,7 +57,7 @@
 
     body {
       margin: 0 auto;
-      max-width: 100ex;
+      max-width: 120ex;
       padding: 0 9ex 1ex 4ex;
       background: var(--bg);
       color: var(--fg);
@@ -134,7 +134,14 @@
     }
 
     dd {
-      margin: 0 0 8px 9ex;
+      /* margin: 0 0 8px 9ex; */
+    }
+
+    dx {
+      display: inline-grid;
+      grid-auto-flow: column;
+      place-items: start;
+      margin-bottom: 5ex;
     }
 
     dd:last-child {
@@ -240,7 +247,7 @@
 
   <h1 class="man-title">{{MAN}} – {{TITLE}}</h1>
 
-{{BODY}}
+  {{BODY}}
 
   <ol class="man-decor man-foot man foot">
     <li class="tl"></li>
